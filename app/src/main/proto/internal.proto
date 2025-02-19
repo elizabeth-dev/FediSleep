@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "sh.elizabeth.fedisleep";
+option java_multiple_files = true;
+
+message InternalData {
+  string last_login_instance = 1;
+  string active_account = 2;
+  map<string, string> accountTokens = 3;
+  map<string, Instance> instances = 4;
+  map<string, AccountSettings> accountSettings = 5;
+
+}
+
+message Instance {
+  string instance_type = 1;
+  string app_id = 2;
+  string app_secret = 3;
+  string delegatedEndpoint = 4;
+}
+
+message AccountSettings {
+  string asleepName = 1;
+  string awakeName = 2;
+}
